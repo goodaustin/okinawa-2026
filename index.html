@@ -22,6 +22,9 @@
     .edition{color:var(--muted);font-size:14px;margin:-16px 0 30px}.table-wrap{overflow-x:auto;margin:18px 0;max-width:100%}table{width:100%;border-collapse:collapse;text-align:left;font-size:15px}th,td{padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#eaf0e9;color:var(--ink);font-weight:600}td{min-width:140px}td:first-child{font-weight:600}.card{min-width:0;overflow-wrap:anywhere}.card ol{padding-left:24px}.subgrid{display:grid;grid-template-columns:1fr 1fr;gap:28px}.shop-list{columns:2;column-gap:30px}.shop-list li{break-inside:avoid}.map{font-size:13px;font-weight:400;display:inline-block;color:var(--sea);white-space:nowrap}.day ul{margin-bottom:0}.edition a{color:var(--sea)}.nav a{padding:4px 0}.table-wrap:focus-visible{outline:3px solid #bd672d;outline-offset:3px}
     @media(max-width:600px){.subgrid{grid-template-columns:1fr;gap:0}.shop-list{columns:1}.card.wide{padding:22px 18px}th,td{padding:10px 12px}.table-wrap{margin-right:0}.nav{gap:24px}}
     @media print{.table-wrap{overflow:visible}td{min-width:0}.map{display:none}.card.wide{break-inside:auto}h2,h3{break-after:avoid}}
+    .day-links{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}.day-links a{border:1px solid var(--line);border-radius:8px;padding:9px 13px;background:#eaf0e9;text-decoration:none;font-size:14px}.day-links a:hover{background:#dce9dd}.legend{padding:12px 16px;background:#f3efdf;border-radius:8px;font-size:14px}.day-plan{margin-top:38px;border-top:3px solid var(--sea);padding-top:20px}.card .day-plan>h3{font-size:24px;margin:0 0 10px}.day-summary{font-weight:600;color:var(--sea)!important}.group-title{padding:10px 14px;background:#eaf0e9;border-radius:6px;margin:24px 0 4px}.card .schedule{list-style:none;margin:0;padding:0}.card .schedule>li{display:grid;grid-template-columns:72px minmax(0,1fr);gap:18px;margin:0;padding:20px 0;border-bottom:1px solid var(--line)}.slot-time{font-weight:700;font-size:18px;color:var(--sea);font-variant-numeric:tabular-nums}.slot-content h4{font-size:17px;margin:0 0 7px;line-height:1.65}.slot-content p{margin:0;font-size:15px}.travel{font-size:13px;color:#795327;margin-bottom:7px}.alternatives{background:#f3efdf;border-radius:10px;padding:18px 22px;margin-top:24px}.alternatives h4{margin:0;font-size:17px}.alternatives p{margin-bottom:0}.alternatives ul{margin-bottom:0}
+    @media(max-width:600px){.card .schedule>li{grid-template-columns:55px minmax(0,1fr);gap:12px;padding:18px 0}.slot-time{font-size:16px}.slot-content h4{font-size:16px}.slot-content p{font-size:15px}.card .day-plan>h3{font-size:21px}.day-links{gap:8px}.day-links a{font-size:13px;padding:8px 10px}.alternatives{padding:16px}.day-plan{scroll-margin-top:0}}
+    @media print{.schedule>li{break-inside:avoid}.day-links{display:none}.day-plan{break-before:page}}
   </style>
 </head>
 <body>
@@ -33,44 +36,87 @@
     <span class="status">Austin・妹妹・爸爸・媽媽・阿嬤</span>
     <div class="sea" aria-hidden="true"></div>
   </div>
-  <nav aria-label="旅行手冊導覽"><div class="wrap nav"><a href="#days">每日安排</a><a href="#flights">班機</a><a href="#stay">住宿</a><a href="#transport">租車</a><a href="#shopping">購物清單</a><a href="#food">全素餐飲</a><a href="#spots">景點</a><a href="#tips">阿嬤與提醒</a><a href="#deadlines">重要時間</a><a href="#events">限定活動</a><a href="#pending">待確認</a></div></nav>
+  <nav aria-label="旅行手冊導覽"><div class="wrap nav"><a href="#days">詳細行程</a><a href="#flights">班機</a><a href="#stay">住宿</a><a href="#transport">租車</a><a href="#shopping">購物清單</a><a href="#food">全素餐飲</a><a href="#spots">景點</a><a href="#tips">阿嬤與提醒</a><a href="#deadlines">重要時間</a><a href="#events">限定活動</a><a href="#pending">待確認</a></div></nav>
   <main class="wrap">
     <div class="intro"><strong>10/23–10/26・5 位大人・3 晚 4 天</strong><p>Austin、妹妹、爸爸、媽媽與 90 歲阿嬤。爸媽＋阿嬤從台中，Austin＋妹妹從台北出發。阿嬤每站步行以 10 分鐘內為原則；10/24 全天全素、不吃五辛。</p></div>
-    <p class="edition">依 2026/10/10 提供的安排與清單整理。已訂住宿、固定班機、暫定安排及候選地點分別標示；營業時間、活動與價格依原資料保留，未核實處另註明。已查到的官方更正附在相關段落。</p>
+    <p class="edition">2026/10/10 定稿版：依提供的詳細行程完整編排。每日時間表放在最前方，後面保留住宿、租車、購物、餐飲與活動資料。時間、車程與未核實營業資訊依原稿保留，已知更正另有註記。</p>
     <div class="grid">
       <section class="card wide" id="days">
-        <span class="number">01 / DAY BY DAY</span><h2>每日安排與分工</h2>
-        <p>每天早上 08:00 可出發；取車、退房與送機依下列時間優先安排。尚未指定日期的景點完整列在<a href="#spots">景點清單</a>。</p>
-        <div class="day"><h3>10/23 五｜分批抵達，住那霸</h3><ul>
-          <li><strong>爸媽＋阿嬤：</strong>JX302，13:10 台中 T2 出發、15:45 抵達那霸，落地後直接搭計程車到 Nest Hotel Naha Kumoji。</li>
-          <li><strong>Austin＋妹妹：</strong>MM930，18:05 桃園 T1 出發、20:50 抵達那霸，搭單軌到美榮橋站，再前往飯店會合。</li>
-          <li>當晚不用車。Nest Hotel 15:00 起可入住，10/24 有飯店早餐。</li>
-        </ul></div>
-        <div class="day"><h3>10/24 六｜早上取車，晚上住北谷 <span class="tag">全天全素・無五辛</span></h3><ul>
-          <li><strong>早餐：</strong>飯店提供；先確認全素、無五辛的可用品項。</li>
-          <li><strong>09:00 起：</strong>Austin＋爸爸去 Coldio 取車，再回飯店接媽媽、阿嬤與妹妹。取車店與租車預訂待確認。</li>
-          <li><strong>11:00 前：</strong>Nest Hotel 退房。</li>
-          <li><strong>PARCO CITY（暫定）：</strong>Austin 看 FREAK'S STORE；若有販售 On 的鞋店，媽媽可先試鞋。長輩逛街不超過 2 小時。若守住「商場只逛一次」，取消 PARCO、保留週日 Rycom。</li>
-          <li><strong>午餐／晚餐：</strong>從<a href="#food">全素餐飲候選</a>依動線挑選，先確認可避開五辛，不限定原列四處。</li>
-          <li><strong>15:00 起：</strong>入住 Hiro 北谷リゾート。民宿近海、周邊餐廳多；隔天 10:00 前就要退房。</li>
-          <li><strong>可選：</strong>沖繩產業祭可替代 PARCO，但人潮與步行仍需考量。</li>
-        </ul></div>
-        <div class="day"><h3>10/25 日｜Rycom 買鞋、宜野灣海灘 <span class="tag">購物與景點暫定</span></h3><ul>
-          <li><strong>10:00 前：</strong>Hiro 北谷リゾート退房。</li>
-          <li><strong>Rycom：</strong>原資料列 10:00 開門，週日中午後停車難，優先早到；長輩逛街以 2 小時內為原則。</li>
-          <li><strong>媽媽：</strong>Mega Sports 買 On 球鞋，需本人在場試穿。若今天仍沒買到，週一不用由 Austin＋妹妹另外代買。</li>
-          <li><strong>Austin：</strong>Antiqulture 選物、コジマ×ビックカメラ 看 recolte 調理機與理光或其他相機；逛不夠的留到週一自己補。</li>
-          <li><strong>海灘只去一個：</strong>已選宜野灣 Tropical Beach；Gala 青い海是原備選，不再並排。</li>
-          <li><strong>沖繩尚學：</strong>原安排有約 20 分鐘看校園外觀；若空手演武祭時間適合，可考慮替代，活動日期時間仍待確認。</li>
-          <li><strong>晚上：</strong>入住第三晚住宿，位置見<a href="#stay">住宿座標</a>；入住、退房及停車待確認。</li>
-        </ul></div>
-        <div class="day"><h3>10/26 一｜先送長輩，兩人繼續逛</h3><ul>
-          <li>Austin 開車送爸媽＋阿嬤到那霸機場，<strong>最晚 11:15 抵達</strong>；CI311 13:15 起飛。</li>
-          <li>送機後 Austin＋妹妹繼續用車。<strong>日系男裝、選物店集中今天</strong>，依<a href="#shopping">完整店家清單</a>挑選；小店可能中午開或週一休，出發前查 IG。</li>
-          <li>大型商場、家電相機可補逛，另想吃一蘭那霸國際通店。<strong>SPORTS DEPO 天久店／豐崎店已移除</strong>，不為媽媽的鞋另外繞路。</li>
-          <li><strong>18:00：</strong>預計 Coldio 空港店還車；19:00 打烊。官網免費送機末班 17:00，需另外確認還車後交通。</li>
-          <li><strong>最晚 19:30：</strong>Austin＋妹妹到那霸機場；IT233 21:30 起飛，22:05 抵達桃園 T1。</li>
-        </ul></div>
+        <span class="number">01 / DETAILED ITINERARY</span><h2>四天詳細行程</h2>
+        <p><strong>2026/10/10 定稿版。</strong>每天 08:00 可出發；阿嬤每站下車步行以 10 分鐘內為原則，優先停車場旁有風景、廁所與座位的地點。</p>
+        <p class="legend"><strong>★</strong> 原稿標示阿嬤友善　<strong>△</strong> 有步行／階梯，阿嬤可不同行　<strong>⚠</strong> 出發前確認</p>
+        <p class="note">完整保留原稿時間與車程估計，並非即時路況或已驗證的無障礙保證；已知資訊更正與時間衝突直接註明。10/24 餐點一律以全素、避開五辛為條件。</p>
+        <div class="day-links" aria-label="跳到各日行程"><a href="#day23">10/23 五・那霸集合</a><a href="#day24">10/24 六・西海岸</a><a href="#day25">10/25 日・古宇利</a><a href="#day26">10/26 一・送機逛街</a></div>
+        <div class="table-wrap" role="region" aria-label="四日行程總覽" tabindex="0"><table><thead><tr><th scope="col">日期</th><th scope="col">主題</th><th scope="col">住宿</th><th scope="col">用車</th></tr></thead><tbody>
+          <tr><td>10/23 五</td><td>那霸集合、夜間採買</td><td>Nest Hotel Naha Kumoji</td><td>無・計程車＋單軌</td></tr>
+          <tr><td>10/24 六</td><td>素食日・PARCO・西海岸</td><td>Hiro 北谷リゾート</td><td>09:00 取車</td></tr>
+          <tr><td>10/25 日</td><td>北部古宇利・Rycom・那霸南</td><td>宜野灣・26°17′28.5″N 127°45′19.0″E</td><td>全日</td></tr>
+          <tr><td>10/26 一</td><td>送機・Austin＋妹妹逛街</td><td>—</td><td>18:00 還車</td></tr>
+        </tbody></table></div>
+        <article class="day-plan" id="day23"><h3>10/23 五｜那霸集合、夜間採買</h3><p class="day-summary">住宿：Nest Hotel Naha Kumoji｜當晚不租車</p><h4 class="group-title">爸媽＋阿嬤・台中出發</h4><ol class="schedule">
+<li><div class="slot-time">13:10</div><div class="slot-content"><h4>JX302 星宇・台中清泉崗 T2 出發</h4><p>爸媽＋阿嬤由台中出發。</p></div></li>
+<li><div class="slot-time">15:45</div><div class="slot-content"><h4>抵達那霸機場（國際線）</h4><p>預估入境＋提領行李約 30–45 分鐘。</p></div></li>
+<li><div class="slot-time">16:30</div><div class="slot-content"><h4>計程車 → Nest Hotel Naha Kumoji</h4><div class="travel">車程約 20 分鐘</div><p>原稿乘車位置：機場 1F 到著ロビー出口「7 番 近・中距離タクシー」乘車處；現場依指標。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Nest%20Hotel%20Naha%20Kumoji">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">16:50</div><div class="slot-content"><h4>入住、休息</h4><p>入住 15:00 起／翌日 11:00 前退房。飯店官網列最近單軌為<strong>美榮橋站</strong>，已更正原稿的縣廳前站。</p></div></li>
+<li><div class="slot-time">18:00</div><div class="slot-content"><h4>晚餐・飯店周邊 5 分鐘內</h4><p>沖繩麵或居酒屋；久茂地一帶餐廳密集，選步行最短的。</p></div></li>
+<li><div class="slot-time">20:00</div><div class="slot-content"><h4>回房休息</h4><p>等 Austin 與妹妹會合。</p></div></li>
+</ol><h4 class="group-title">Austin＋妹妹・台北出發</h4><ol class="schedule">
+<li><div class="slot-time">18:05</div><div class="slot-content"><h4>MM930 樂桃・桃園 T1 出發</h4><p>Austin＋妹妹由桃園出發。</p></div></li>
+<li><div class="slot-time">20:50</div><div class="slot-content"><h4>抵達那霸機場（國際線）</h4><p>入境、提領行李後前往單軌。</p></div></li>
+<li><div class="slot-time">21:20</div><div class="slot-content"><h4>單軌・那霸空港駅 → 美榮橋駅</h4><div class="travel">原稿估約 15 分鐘；搭乘時間待確認</div><p>原稿路線備註：美榮橋南口走路約 8 分鐘到一蘭；飯店在美榮橋與縣廳前之間。飯店官網列美榮橋站步行約 5 分鐘。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%BE%8E%E6%A0%84%E6%A9%8B%E9%A7%85">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">21:40</div><div class="slot-content"><h4>飯店放行李</h4><p>先放行李，再出門採買和吃晚餐；抵達時間依入境與列車調整。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Nest%20Hotel%20Naha%20Kumoji">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">21:50</div><div class="slot-content"><h4>★ ビックカメラ Select 那霸國際通店</h4><div class="travel">原稿：飯店步行約 6 分鐘</div><p>久茂地 3-29-2 JMF ビル沖縄国際通り 01。<strong>11:00–23:00</strong>（原稿）。觀光客導向小店，約 350 ㎡；recolte 調理機／理光相機不一定有貨，先偵查、看價格。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%93%E3%83%83%E3%82%AF%E3%82%AB%E3%83%A1%E3%83%A9%20Select%20%E9%82%A3%E8%A6%87%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A%E5%BA%97">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">22:40</div><div class="slot-content"><h4>一蘭・那霸國際通店</h4><div class="travel">從 Bic Camera 步行約 3 分鐘</div><p>牧志 1-2-24 琉球セントラルビル B1F。原稿列 <strong>24 小時營業</strong>。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%80%E8%98%AD%20%E9%82%A3%E8%A6%87%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A%E5%BA%97">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">23:30</div><div class="slot-content"><h4>回飯店</h4><p>休息，翌日早餐 07:30。</p></div></li>
+</ol></article>        <article class="day-plan" id="day24"><h3>10/24 六｜素食日・PARCO・西海岸</h3><p class="day-summary">住宿：Hiro 北谷リゾート｜全天全素、無五辛｜09:00 取車</p><ol class="schedule">
+<li><div class="slot-time">07:30</div><div class="slot-content"><h4>全員飯店早餐</h4><p>飯店有提供早餐；<strong>全素、無五辛可用品項需確認</strong>，包含醬汁、湯底。</p></div></li>
+<li><div class="slot-time">08:30</div><div class="slot-content"><h4>Austin＋爸爸出發取車</h4><div class="travel">計程車：那霸店約 10 分鐘／空港店約 25 分鐘</div><p>那霸店在奧武山公園內、與ユーポスレンタカー同店；原稿壺川站徒步約 9 分鐘。空港店為豐見城市豐崎 1-411 TOMITON 1F。<strong>⚠ 取車店依 Coldio 回覆決定。</strong></p></div></li>
+<li><div class="slot-time">09:00</div><div class="slot-content"><h4>Coldio 取車・Alphard 40 系 7 人座</h4><p>每位駕駛帶台灣駕照正本＋日文譯本＋護照。確認<strong>免責／NOC 已含、ETC 卡、油箱滿</strong>；車身刮傷拍照。</p></div></li>
+<li><div class="slot-time">09:45</div><div class="slot-content"><h4>回飯店接媽媽、阿嬤、妹妹</h4><div class="travel">原稿回程約 10 分鐘，依取車店調整</div><p>長輩吃完早餐後 <strong>09:30 前整理好行李，在大廳等</strong>。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Nest%20Hotel%20Naha%20Kumoji">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">10:00</div><div class="slot-content"><h4>退房出發</h4><p>行李全部上車。</p></div></li>
+<li><div class="slot-time">10:15</div><div class="slot-content"><h4>★ PARCO CITY・San-A 浦添西海岸</h4><div class="travel">車程約 15 分鐘</div><p>浦添市西洲 3-1-1，<strong>10:00–22:00，停車免費</strong>（原稿）。Austin：FREAK'S STORE；爸媽：Uniqlo／無印／GU；阿嬤：美食街靠海座位休息。<strong>⚠ 查館內鞋店是否有 On，有的話媽媽先試穿。</strong> <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=PARCO%20CITY%20%E6%B5%A6%E6%B7%BB%E5%B8%82%E8%A5%BF%E6%B4%B23-1-1">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">12:00</div><div class="slot-content"><h4>離開 PARCO → 西原 IC → 石川 IC</h4><div class="travel">車程約 50 分鐘</div><p>走沖繩自動車道，前往恩納村午餐。</p></div></li>
+<li><div class="slot-time">12:50</div><div class="slot-content"><h4>★ Plant-Based Restaurant Gajimaru 午餐</h4><p>官網地址：恩納村<strong>真栄田 330-1</strong>。12:00–22:00，週五公休、週六營業。<a href="tel:+81989599678">098-959-9678</a>。原稿推薦豆乳擔擔麵、餃子、沙拉，停車場就在店前。<strong>⚠ 須先確認可全素無五辛；官網部分品項含蒜或洋蔥醬。</strong> <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Plant-Based%20Restaurant%20GAJIMARU%20%E6%81%A9%E7%B4%8D%E6%9D%91">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">13:50</div><div class="slot-content"><h4>出發前往萬座毛</h4><div class="travel">車程約 20 分鐘</div><p>依用餐結束時間調整。</p></div></li>
+<li><div class="slot-time">14:10</div><div class="slot-content"><h4>★ 萬座毛</h4><p>原稿：08:00–20:00、門票 ¥100、停車免費。步道平坦鋪裝，繞一圈約 5–10 分鐘；<strong>阿嬤走到第一個觀景點拍照就折返</strong>。設施有電梯、廁所、座位、賣店；現場步行時間依體力。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%87%E5%BA%A7%E6%AF%9B">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">14:50</div><div class="slot-content"><h4>出發前往殘波岬</h4><div class="travel">車程約 25 分鐘</div><p>殘波岬是可選站，時間不足可直接跳過。</p></div></li>
+<li><div class="slot-time">15:15</div><div class="slot-content"><h4>★ 殘波岬（可選）</h4><p>原稿：停車場旁為燈塔與海崖，平路 5 分鐘內到觀景處，有廁所。<strong>時間不夠就跳過</strong>，不排登燈塔。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%AE%8B%E6%B3%A2%E5%B2%AC">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">15:45</div><div class="slot-content"><h4>出發前往北谷</h4><div class="travel">車程約 30 分鐘</div><p>國道 58 南下。</p></div></li>
+<li><div class="slot-time">16:15</div><div class="slot-content"><h4>Hiro 北谷リゾート 入住</h4><p>新建獨棟民宿、停車位 2 台、海邊步行約 5 分鐘。入住 15:00 起／<strong>翌日 10:00 前退房</strong>。先放行李，讓阿嬤休息。</p></div></li>
+<li><div class="slot-time">17:15</div><div class="slot-content"><h4>★ Sunset Beach・北谷公園</h4><div class="travel">車程約 5 分鐘</div><p>停車場緊鄰沙灘，坐堤岸看夕陽；原稿估 10 月下旬約 17:55 日落。順便逛美國村、Depot Island，原稿記載平地、有電梯與長椅，依體力取捨。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8C%97%E8%B0%B7%E5%85%AC%E5%9C%92%20%E3%82%B5%E3%83%B3%E3%82%BB%E3%83%83%E3%83%88%E3%83%93%E3%83%BC%E3%83%81">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">18:30</div><div class="slot-content"><h4>Esparza&#x27;s Tacos &amp; Coffee 晚餐</h4><div class="travel">車程約 5 分鐘</div><p>北谷町美浜 3-1-10 1F。原稿：週六 08:00–21:00、半數菜單 vegan，可選豆腐 chorizo 塔可、vegan 墨西哥捲，附免費湯和莎莎吧。<strong>⚠ 主餐、湯與莎莎醬都需確認無五辛。刷卡偶爾失靈，帶現金。</strong> <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Esparza%27s%20Tacos%20%26%20Coffee%20%E5%8C%97%E8%B0%B7">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">20:00</div><div class="slot-content"><h4>回民宿</h4><p>休息、整理翌日要一起帶走的行李。</p></div></li>
+</ol><div class="alternatives"><h4>週六替代方案</h4><ul><li><strong>不想逛兩次商場：</strong>PARCO 改「第 50 回沖繩產業祭」（原稿 10/23–25，奧武山公園），平坦公園型市集但人多；或直接 10:00 北上。</li><li><strong>想看祭典：</strong>讀谷祭（讀谷村運動廣場，日期以主辦公告為準）可取代 Sunset Beach，但人多、停車遠，對阿嬤較不友善。</li></ul></div></article>        <article class="day-plan" id="day25"><h3>10/25 日｜北部古宇利・Rycom・那霸南</h3><p class="day-summary">住宿：宜野灣第三晚住宿｜08:00 帶全部行李出發，不回北谷民宿</p><p>民宿退房期限 10:00。早餐可在民宿周邊超商買，或 Esparza's 週日 08:00 開門吃早餐塔可（原稿）；若選 08:00 才開的早餐店，出發與後續時間須順延。</p><ol class="schedule">
+<li><div class="slot-time">08:00</div><div class="slot-content"><h4>北谷出發 → 沖繩南 IC → 許田 IC → 縣道</h4><div class="travel">車程約 75 分鐘</div><p><strong>已退房，帶全部行李出發</strong>，不再回民宿。原稿預期週日早上順暢，仍依當日路況。</p></div></li>
+<li><div class="slot-time">09:15</div><div class="slot-content"><h4>★ 古宇利大橋</h4><p>開車過橋本身就是風景；過橋後停島側「古宇利ビーチ」停車場，從停車場回看整座橋，原稿估步行 2 分鐘。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%A4%E5%AE%87%E5%88%A9%E3%83%93%E3%83%BC%E3%83%81">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">09:40</div><div class="slot-content"><h4>△ 心形岩・ティーヌ浜</h4><div class="travel">車程約 10 分鐘</div><p>收費停車場到海灘有下坡小徑。<strong>Austin＋妹妹下去拍約 15 分鐘</strong>；阿嬤不走下坡，由家人陪同在停車場或合適休息處等候。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%8F%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF%20%E3%83%86%E3%82%A3%E3%83%BC%E3%83%8C%E6%B5%9C">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">10:15</div><div class="slot-content"><h4>出發 → 許田 IC → 北中城 IC</h4><div class="travel">原稿車程約 50 分鐘</div><p>前往 Rycom。<strong>時間提醒：</strong>10:15 加 50 分鐘約為 11:05，與下列 11:00 目標有 5 分鐘差，尚未計停車；需依當日路況提早離開或順延。</p></div></li>
+<li><div class="slot-time">11:00</div><div class="slot-content"><h4>★ AEON Mall Okinawa Rycom・2 小時內</h4><p>北中城村ライカム 1，原稿列 10:00–22:00。<strong>Mega Sports：媽媽買 On 的主場，優先完成本人試穿購買。</strong>コジマ×ビックカメラ：recolte、理光／其他相機；另有 Uniqlo／無印。阿嬤在長椅或 4F 美食街休息。<strong>⚠ 週日 11:00 後停車位緊，盡量準時到。</strong> <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E6%B2%96%E7%B8%84%E3%83%A9%E3%82%A4%E3%82%AB%E3%83%A0">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">12:15</div><div class="slot-content"><h4>4F 美食街午餐</h4><p>在商場用餐，讓阿嬤坐下休息。</p></div></li>
+<li><div class="slot-time">13:00</div><div class="slot-content"><h4>離開 → 國道 330／58 南下</h4><div class="travel">車程約 40 分鐘</div><p>前往波上宮。</p></div></li>
+<li><div class="slot-time">13:45</div><div class="slot-content"><h4>★ 波上宮</h4><p>那霸市若狭 1-25-11。原稿：停車場在神社旁，看崖上神社與海約 10 分鐘；依阿嬤步行能力選路線。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B3%A2%E4%B8%8A%E5%AE%AE">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">14:15</div><div class="slot-content"><h4>★ 瀨長島・停留 1 小時</h4><div class="travel">車程約 15 分鐘</div><p>豐見城市瀨長 174。先在本島與瀨長島間連絡道路旁的<strong>可合法停車處</strong>或島北岸停車場停約 10 分鐘，看飛機從頭頂降落；再開到 Umikaji Terrace。<strong>選停車場同一層、最下層可到達的咖啡廳坐 50 分鐘，不往上爬階梯</strong>，實際停車層與店家入口現場確認。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%80%AC%E9%95%B7%E5%B3%B6%20%E3%82%A6%E3%83%9F%E3%82%AB%E3%82%B8%E3%83%86%E3%83%A9%E3%82%B9">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">15:15</div><div class="slot-content"><h4>出發前往沖繩尚學</h4><div class="travel">車程約 15 分鐘</div><p>只看校門外觀，不進校園。</p></div></li>
+<li><div class="slot-time">15:30</div><div class="slot-content"><h4>★ 沖繩尚學高校・校門口</h4><p>那霸市国場 747。原稿以週日休校安排，<strong>只在校門口看橫幅／旗幟，約 5 分鐘</strong>；不預設有展覽或可入校。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B2%96%E7%B8%84%E5%B0%9A%E5%AD%A6%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1%20%E5%9B%BD%E5%A0%B4747">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">15:45</div><div class="slot-content"><h4>出發前往第三晚住宿</h4><div class="travel">車程約 25 分鐘</div><p>依提供座標導航。</p></div></li>
+<li><div class="slot-time">16:10</div><div class="slot-content"><h4>宜野灣・第三晚住宿入住</h4><p>座標 <strong>26°17′28.5″N 127°45′19.0″E</strong>，原資料為北谷南邊、宜野灣一帶。<strong>⚠ 入住／退房時間待確認</strong>；若未能在此時入住，先去 Tropical Beach 的遮陽長椅休息。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=26.29125%2C127.755278">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">17:00</div><div class="slot-content"><h4>★ 宜野灣 Tropical Beach・夕陽</h4><div class="travel">車程約 5–10 分鐘</div><p>宜野灣市真志喜 4-2-1，宜野灣海濱公園。原稿：停車場旁有遮陽長椅與廁所。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%AE%9C%E9%87%8E%E6%B9%BE%20%E3%83%88%E3%83%AD%E3%83%94%E3%82%AB%E3%83%AB%E3%83%93%E3%83%BC%E3%83%81%20%E7%9C%9F%E5%BF%97%E5%96%9C4-2-1">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">18:30</div><div class="slot-content"><h4>晚餐・宜野灣／北谷一帶</h4><p>依住宿位置與當天體力選餐廳。</p></div></li>
+</ol><div class="alternatives"><h4>週日替代方案</h4><ul><li><strong>看空手演武：</strong>若確定 2026/10/25 下午在國際通舉行空手之日紀念演武祭，把 15:30 尚學改為國際通看約 20 分鐘，阿嬤找可坐的店家休息觀看。原稿參考：2025 年為週日 10/26、約 3,100 人一齊演武，不能直接套用到今年。</li><li><strong>減少那霸南段：</strong>不想逛 Rycom 以外太多南段景點，就砍波上宮、保留瀨長島。</li></ul></div></article>        <article class="day-plan" id="day26"><h3>10/26 一｜送機・Austin＋妹妹逛街</h3><p class="day-summary">09:30 從住宿出發｜10:30 送長輩｜18:00 還車｜18:30 到機場</p><p>⚠ 第三晚住宿退房時間待確認。宜野灣 → 機場走國道 58，週一早上塞車，原稿抓 60 分鐘。</p><ol class="schedule">
+<li><div class="slot-time">08:00</div><div class="slot-content"><h4>早餐、整理行李</h4><p>第三晚住宿退房時間待確認。</p></div></li>
+<li><div class="slot-time">09:30</div><div class="slot-content"><h4>退房出發・行李全部上車</h4><div class="travel">車程預留 60 分鐘</div><p>宜野灣 → 那霸機場走國道 58；週一早上塞車，依實際路況提早。</p></div></li>
+<li><div class="slot-time">10:30</div><div class="slot-content"><h4>那霸機場・送爸媽＋阿嬤</h4><p>原稿：國際線出發在 3F，4F 美食街可坐著等。CI311 <strong>13:15 起飛，最晚 11:15 到機場</strong>；10:30 是預留緩衝的目標。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%82%A3%E8%A6%87%E7%A9%BA%E6%B8%AF%20%E5%9B%BD%E9%9A%9B%E7%B7%9A">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">10:50</div><div class="slot-content"><h4>開往久茂地，停投幣式停車場</h4><div class="travel">車程約 15 分鐘</div><p>行李收在後車廂、不外露。原稿下一站 11:00；依 15 分鐘車程最早約 11:05 到，另需停車時間，購物順延即可。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B9%85%E8%8C%82%E5%9C%B0%20%E9%82%A3%E8%A6%87%20%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">11:00</div><div class="slot-content"><h4>ビックカメラ Select・11:00 開門</h4><p>原稿目標時間；抵達後再看一次有沒有補貨。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%93%E3%83%83%E3%82%AF%E3%82%AB%E3%83%A1%E3%83%A9%20Select%20%E9%82%A3%E8%A6%87%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A%E5%BA%97">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">12:00</div><div class="slot-content"><h4>國際通／松尾／櫻坂・選物店</h4><div class="travel">步行逛街</div><p><strong>Figure Okinawa、Walker、South Store、Float、FR2 月桃、MIRIKAJI、OLDENTIMES</strong>。⚠ 小店多半中午才開、部分週一公休，出發前查各店 IG。</p></div></li>
+<li><div class="slot-time">13:30</div><div class="slot-content"><h4>國際通午餐</h4><p>依當天逛街位置選擇。</p></div></li>
+<li><div class="slot-time">15:00</div><div class="slot-content"><h4>開往豐崎</h4><div class="travel">車程約 25 分鐘</div><p>前往 Ashibinaa。</p></div></li>
+<li><div class="slot-time">15:30</div><div class="slot-content"><h4>Okinawa Outlet Mall Ashibinaa</h4><p>豐見城市豐崎 1-188。原稿：<strong>10:00–20:00，停車免費</strong>。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B2%96%E7%B8%84%E3%82%A2%E3%82%A6%E3%83%88%E3%83%AC%E3%83%83%E3%83%88%E3%83%A2%E3%83%BC%E3%83%AB%20%E3%81%82%E3%81%97%E3%81%B3%E3%81%AA%E3%83%BC">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">17:45</div><div class="slot-content"><h4>加油 → Coldio 空港店・預計 18:00 還車</h4><div class="travel">原稿店間移動約 5 分鐘，另留加油與還車手續時間</div><p><strong>滿油還車。</strong>豐崎 1-411 TOMITON 1F，在 Ashibinaa 隔壁；19:00 打烊，目標 18:00 還車。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=TOMITON%20%E8%B1%8A%E5%B4%8E1-411">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">18:15</div><div class="slot-content"><h4>計程車 → 那霸機場</h4><div class="travel">原稿車程約 10 分鐘</div><p>按原稿改搭計程車；Coldio 官網免費送機末班 17:00，不依賴免費送機。計程車安排與費用需確認。 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%82%A3%E8%A6%87%E7%A9%BA%E6%B8%AF">地圖搜尋 ↗</a></p></div></li>
+<li><div class="slot-time">18:30</div><div class="slot-content"><h4>抵達機場，整理行李、辦登機</h4><p>若有寄存行李先取回。IT233 台灣虎航 <strong>21:30 起飛，最晚 19:30 到機場</strong>；實際櫃檯開放與報到依航空公司。</p></div></li>
+<li><div class="slot-time">21:30</div><div class="slot-content"><h4>起飛 → 22:05 桃園 T1</h4><p>IT233 台灣虎航，時間為各機場當地時間。</p></div></li>
+</ol><div class="alternatives"><h4>週一替代方案</h4><ul><li><strong>原備案：若改為 24 小時制方案或無法跨店還車：</strong>11:00 在那霸店（壺川）還車，之後用單軌：壺川 → 縣廳前（國際通）→ 赤嶺／機場，再由機場轉 95 號巴士到 Ashibinaa（原稿估 15 分鐘），最後巴士回機場。行李先寄機場置物櫃；實際取寄順序、巴士站點與班次需確認。</li><li><strong>不想開車進那霸市區：</strong>11:00 在豐崎還車，先逛 Ashibinaa，再搭 95 號巴士回機場、轉單軌到國際通，19:00 搭單軌回機場。行李需先安排寄放；以 19:30 前抵達為上限，依車班提早。</li></ul><p class="note">Coldio 官網已明載日泊制，因此「24 小時制」不作為目前採用上述備案的理由；仍需確認跨店還車可行性。以上保留原稿替代動線，巴士路線、車班、置物櫃空位尚未核實。</p></div></article>
       </section>
       <section class="card" id="flights">
         <span class="number">02 / FLIGHTS</span><h2>兩組班機・固定時間</h2><p class="note">依提供的班機資料。時間為各機場當地時間，日本比台灣快 1 小時；異動以航空公司通知為準。</p>
@@ -117,8 +163,8 @@
           <li>Figure Okinawa <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Figure%20Okinawa">地圖搜尋 ↗</a></li><li>Walker <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Walker%20Okinawa%20%E3%82%BB%E3%83%AC%E3%82%AF%E3%83%88%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97">地圖搜尋 ↗</a></li><li>South Store <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=South%20Store%20%E6%B2%96%E7%B8%84">地圖搜尋 ↗</a></li><li>Float <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Float%20%E6%B2%96%E7%B8%84%20%E3%82%BB%E3%83%AC%E3%82%AF%E3%83%88%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97">地圖搜尋 ↗</a></li><li>FR2 月桃 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=FR2%20%E6%9C%88%E6%A1%83%20%E6%B2%96%E7%B8%84">地圖搜尋 ↗</a></li><li>沖繩 MIRIKAJI <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=MIRIKAJI%20%E6%B2%96%E7%B8%84">地圖搜尋 ↗</a></li><li>OLDENTIMES OKINAWA <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=OLDENTIMES%20OKINAWA">地圖搜尋 ↗</a></li>
         </ul>
         <h3>大型商場與街區</h3><div class="table-wrap" role="region" aria-label="購物地點與目的" tabindex="0"><table><thead><tr><th scope="col">地點</th><th scope="col">想逛什麼</th><th scope="col">安排</th></tr></thead><tbody>
-          <tr><td>PARCO CITY <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=PARCO%20CITY%20%E6%B2%96%E7%B8%84">地圖搜尋 ↗</a></td><td>FREAK'S STORE；若有 On 店，媽媽先試鞋</td><td>10/24 暫定，可能刪除</td></tr>
-          <tr><td>AEON Rycom <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E6%B2%96%E7%B8%84%E3%83%A9%E3%82%A4%E3%82%AB%E3%83%A0">地圖搜尋 ↗</a></td><td>媽媽：Mega Sports 的 On；Austin：Antiqulture、コジマ×ビックカメラ</td><td>10/25 優先，原資料列 10:00 開</td></tr>
+          <tr><td>PARCO CITY <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=PARCO%20CITY%20%E6%B2%96%E7%B8%84">地圖搜尋 ↗</a></td><td>FREAK'S STORE；若有 On 店，媽媽先試鞋</td><td>10/24 主線；可採替代方案</td></tr>
+          <tr><td>AEON Rycom <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E6%B2%96%E7%B8%84%E3%83%A9%E3%82%A4%E3%82%AB%E3%83%A0">地圖搜尋 ↗</a></td><td>媽媽：Mega Sports 的 On；Austin：Antiqulture、コジマ×ビックカメラ</td><td>10/25 行程 11:00 到；原資料列 10:00 開</td></tr>
           <tr><td>Ashibinaa Outlet <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B2%96%E7%B8%84%E3%82%A2%E3%82%A6%E3%83%88%E3%83%AC%E3%83%83%E3%83%88%E3%83%A2%E3%83%BC%E3%83%AB%20%E3%81%82%E3%81%97%E3%81%B3%E3%81%AA%E3%83%BC">地圖搜尋 ↗</a></td><td>Outlet 購物</td><td>候選，靠近 Coldio 空港店</td></tr>
           <tr><td>北谷美國村／Depot Island <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Depot%20Island%20%E5%8C%97%E8%B0%B7">地圖搜尋 ↗</a></td><td>街區與商店</td><td>候選，住北谷時依體力安排</td></tr>
         </tbody></table></div>
@@ -127,7 +173,7 @@
         <p class="note">地圖連結為店名搜尋，請確認分店；店家營業時間與庫存尚未逐一確認。</p>
       </section>
       <section class="card wide" id="food">
-        <span class="number">06 / FOOD</span><h2>10/24 全天全素・避開五辛</h2>
+        <span class="number">06 / FOOD</span><h2>10/24 全天全素・避開五辛</h2><p><strong>定稿主線：飯店早餐 → Gajimaru 午餐 → Esparza's 晚餐。</strong>三餐均需先確認無五辛；其他選項保留作為備案。</p>
         <p><strong>早餐、午餐、晚餐都適用。</strong>不含肉、魚、蛋奶與動物高湯，也不含蔥、蒜、洋蔥、韭菜等五辛；醬汁、湯底一起確認。Vegan／plant-based 不代表無五辛。</p>
         <div class="table-wrap" role="region" aria-label="全素餐飲候選清單" tabindex="0"><table><thead><tr><th scope="col">地點</th><th scope="col">原資料中的選項</th><th scope="col">使用前要確認</th></tr></thead><tbody>
           <tr><td>Nest Hotel 早餐</td><td>10/24 飯店提供</td><td>可用的全素無五辛品項，尤其湯、醬汁與麵包</td></tr>
@@ -143,13 +189,13 @@
       <section class="card wide" id="spots">
         <span class="number">07 / PLACES</span><h2>景點、興趣與想看的東西</h2>
         <div class="table-wrap" role="region" aria-label="景點清單" tabindex="0"><table><thead><tr><th scope="col">地點</th><th scope="col">想做的事</th><th scope="col">安排與限制</th></tr></thead><tbody>
-          <tr><td>沖繩尚學 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B2%96%E7%B8%84%E5%B0%9A%E5%AD%A6%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1">地圖搜尋 ↗</a></td><td>看一眼校園、橫幅、旗幟；有展出更好</td><td>原週日安排約 20 分鐘；參觀條件與現場展出待確認</td></tr>
-          <tr><td>瀨長島 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%80%AC%E9%95%B7%E5%B3%B6%20%E3%82%A6%E3%83%9F%E3%82%AB%E3%82%B8%E3%83%86%E3%83%A9%E3%82%B9">地圖搜尋 ↗</a></td><td>在咖啡廳看飛機起降</td><td>停留約 1 小時即可；日期、店家與停車到座位路線待排</td></tr>
-          <tr><td>波上宮 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B3%A2%E4%B8%8A%E5%AE%AE">地圖搜尋 ↗</a></td><td>新增想去的景點</td><td>日期待排，先確認可符合步行與階梯限制的路線</td></tr>
-          <tr><td>古宇利島／古宇利大橋 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%A4%E5%AE%87%E5%88%A9%E5%A4%A7%E6%A9%8B">地圖搜尋 ↗</a></td><td>開車看海、看大橋</td><td>日期待排，停車休息點另確認</td></tr>
-          <tr><td>心形岩 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%8F%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF%20%E5%8F%A4%E5%AE%87%E5%88%A9%E5%B3%B6">地圖搜尋 ↗</a></td><td>新增想去的景點</td><td>先確認從停車場到景點的地面與步行條件，再決定阿嬤是否同行</td></tr>
-          <tr><td>宜野灣 Tropical Beach <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%AE%9C%E9%87%8E%E6%B9%BE%20%E3%83%88%E3%83%AD%E3%83%94%E3%82%AB%E3%83%AB%E3%83%93%E3%83%BC%E3%83%81">地圖搜尋 ↗</a></td><td>週日海灘，選一個即可</td><td>已選此處；以看海休息為主，依阿嬤體力調整</td></tr>
-          <tr><td>Gala 青い海 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Gala%20%E9%9D%92%E3%81%84%E6%B5%B7">地圖搜尋 ↗</a></td><td>原海邊候選</td><td>目前以 Tropical Beach 取代，不必兩處都去</td></tr>
+          <tr><td>沖繩尚學 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B2%96%E7%B8%84%E5%B0%9A%E5%AD%A6%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1">地圖搜尋 ↗</a></td><td>看一眼校園、橫幅、旗幟；有展出更好</td><td>10/25 15:30 看校門約 5 分鐘；不進校園，現場展出待確認</td></tr>
+          <tr><td>瀨長島 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%80%AC%E9%95%B7%E5%B3%B6%20%E3%82%A6%E3%83%9F%E3%82%AB%E3%82%B8%E3%83%86%E3%83%A9%E3%82%B9">地圖搜尋 ↗</a></td><td>在咖啡廳看飛機起降</td><td>10/25 14:15–15:15；停車場同層咖啡廳，不爬階梯</td></tr>
+          <tr><td>波上宮 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B3%A2%E4%B8%8A%E5%AE%AE">地圖搜尋 ↗</a></td><td>新增想去的景點</td><td>10/25 13:45；先確認可符合步行與階梯限制的路線</td></tr>
+          <tr><td>古宇利島／古宇利大橋 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%A4%E5%AE%87%E5%88%A9%E5%A4%A7%E6%A9%8B">地圖搜尋 ↗</a></td><td>開車看海、看大橋</td><td>10/25 09:15；島側古宇利ビーチ停車場看橋</td></tr>
+          <tr><td>心形岩 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%8F%E3%83%BC%E3%83%88%E3%83%AD%E3%83%83%E3%82%AF%20%E5%8F%A4%E5%AE%87%E5%88%A9%E5%B3%B6">地圖搜尋 ↗</a></td><td>新增想去的景點</td><td>10/25 09:40；下坡小徑，Austin＋妹妹拍照，阿嬤由家人陪同休息</td></tr>
+          <tr><td>宜野灣 Tropical Beach <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%AE%9C%E9%87%8E%E6%B9%BE%20%E3%83%88%E3%83%AD%E3%83%94%E3%82%AB%E3%83%AB%E3%83%93%E3%83%BC%E3%83%81">地圖搜尋 ↗</a></td><td>週日海灘，選一個即可</td><td>10/25 17:00；遮陽長椅看夕陽，依阿嬤體力調整</td></tr>
+          <tr><td>Gala 青い海 <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Gala%20%E9%9D%92%E3%81%84%E6%B5%B7">地圖搜尋 ↗</a></td><td>原海邊候選</td><td>目前以 Tropical Beach 取代，不另加排</td></tr>
         </tbody></table></div>
         <h3>甲子園話題</h3><p>關注沖繩尚學，以及末吉良丞、新垣有絃、織田翔希等球員。原資料提及沖繩尚學 2025 夏甲子園冠軍，想找校園紀念橫幅或旗幟；<strong>2025 優勝旗展、寫真展已結束</strong>，不當成本次可參加的展覽。</p>
         <p><strong>本次不去美麗海水族館。</strong>可借輪椅的景點優先，但尚未確認上述各站的輪椅服務。</p>
@@ -163,26 +209,26 @@
         <span class="number">09 / KEY TIMES</span><h2>重要時間・先看這裡</h2>
         <h3>10/23 五</h3><p><strong>15:45</strong> 長輩抵達那霸<br><strong>20:50</strong> Austin＋妹妹抵達</p>
         <h3>10/24 六</h3><p><strong>09:00</strong> Coldio 開門，預計取車<br><strong>11:00 前</strong> Nest Hotel 退房<br><strong>15:00 起</strong> 北谷民宿入住</p>
-        <h3>10/25 日</h3><p><strong>10:00 前</strong> 北谷民宿退房<br><strong>10:00</strong> Rycom 開門（原資料）<br>週日中午後停車難，優先早到。</p>
-        <h3>10/26 一</h3><p><strong>11:15 前</strong> 長輩到那霸機場<br><strong>17:00</strong> Coldio 官網免費送機末班<br><strong>18:00</strong> 預計空港店還車<br><strong>19:00</strong> Coldio 打烊<br><strong>19:30 前</strong> Austin＋妹妹到機場</p>
+        <h3>10/25 日</h3><p><strong>10:00 前</strong> 北谷民宿退房<br><strong>10:00</strong> Rycom 開門（原資料）<br><strong>11:00</strong> 行程目標抵達 Rycom，實際依北部車程調整。</p>
+        <h3>10/26 一</h3><p><strong>11:15 前</strong> 長輩到那霸機場<br><strong>17:00</strong> Coldio 官網免費送機末班<br><strong>18:00</strong> 預計空港店還車<br><strong>19:00</strong> Coldio 打烊<br><strong>18:15</strong> 預計搭計程車往機場<br><strong>18:30</strong> 預計抵達；<strong>19:30 前</strong>為上限</p>
       </section>
       <section class="card wide" id="events">
         <span class="number">10 / OPTIONAL EVENTS</span><h2>期間限定活動・可選清單</h2>
         <p class="note">完整保留原資料中的活動線索。以下活動日期與舉辦現況尚未另行查核，不視為已排定；有日期矛盾的保留標示。</p>
         <div class="table-wrap" role="region" aria-label="期間限定活動" tabindex="0"><table><thead><tr><th scope="col">活動</th><th scope="col">原資料日期／時間</th><th scope="col">地點</th><th scope="col">取捨與待確認</th></tr></thead><tbody>
           <tr><td>第 50 回沖繩產業祭</td><td>10/23（五）–10/25（日）</td><td>奧武山公園／縣立武道館</td><td>平坦公園市集、人多；可替代週六 PARCO</td></tr>
-          <tr><td>空手之日紀念演武祭</td><td>空手之日 10/25（2026 為週日）；2026 演武祭日期時間待公告／確認</td><td>那霸國際通</td><td>2025 年為週日 10/26；不能直接套用。今年若適合，可替代週日尚學約 20 分鐘</td></tr>
+          <tr><td>空手之日紀念演武祭</td><td>空手之日 10/25（2026 為週日）；2026 演武祭日期時間待公告／確認</td><td>那霸國際通</td><td>2025 年為週日 10/26；不能直接套用。今年若適合，可替代週日 15:30 尚學，改看演武約 20 分鐘</td></tr>
           <tr><td>第 52 回讀谷祭</td><td>原資料：10/18–10/24，另有 10/25 進貢船表演</td><td>讀谷村運動廣場</td><td>日期資訊矛盾，不主推</td></tr>
           <tr><td>マカヒキフェスティバル</td><td>10/24–10/25，11:00 起</td><td>豐崎美ら SUN 海灘</td><td>順路可考慮，不特別繞路</td></tr>
           <tr><td>首里城正殿一般公開</td><td>原資料：11/23 起</td><td>首里城</td><td>比本次晚一個月，未排入</td></tr>
         </tbody></table></div>
       </section>
       <section class="card wide" id="pending">
-        <span class="number">11 / TO CONFIRM</span><h2>待決定與待確認</h2>
-        <ol><li><strong>Coldio：</strong>日泊制已在官網確認；仍需確認本次報價、那霸店取／空港店還、兩位駕駛、ETC 卡與預訂。</li><li><strong>第 3 晚住宿：</strong>入住／退房時間與停車；另補住宿名稱、北谷民宿精確地址。</li><li><strong>PARCO CITY 是否有 On：</strong>以及 Rycom 的款式、尺寸、庫存。</li><li><strong>空手之日演武祭：</strong>2026 日期、時間與地點。</li><li><strong>國際通與那霸選物店：</strong>10/26 週一營業狀況，逐店查 IG。</li><li><strong>長輩商場次數：</strong>維持 PARCO＋Rycom 兩次，或只保留 Rycom 一次。</li><li><strong>10/24 三餐：</strong>飯店早餐與候選餐廳能否全素、無五辛。</li><li><strong>18:00 還車後交通：</strong>免費送機末班 17:00，需另確認去機場的安排。</li></ol>
+        <span class="number">11 / BEFORE DEPARTURE</span><h2>出發前待辦・⚠ 清單</h2>
+        <ol><li><strong>Coldio 詢問：</strong>原稿要求比較「六 09:00 → 一 18:00」與「六 11:00 → 一 11:00」兩組時間價格。官網已確認日泊制，仍需取得本次報價；確認那霸店取／空港店還、登記兩位駕駛、<strong>不需兒童座椅</strong>、是否附 ETC 卡。</li><li><strong>第 3 晚住宿：</strong>入住／退房時間、停車位；另補北谷民宿精確地址。</li><li><strong>PARCO CITY 是否有賣 On 的鞋店：</strong>媽媽週六先試，週日 Rycom 為主場；款式、尺寸與庫存需確認。</li><li><strong>空手之日演武祭：</strong>查沖繩縣／琉球新報的 2026 日期與時間，再決定是否替代尚學。</li><li><strong>國際通選物店：</strong>各店 IG 確認 10/26 週一營業狀況。</li><li><strong>證件與付款：</strong>每位駕駛的日文駕照譯本、台灣駕照正本、護照；準備現金供 Esparza's、小店與停車場使用。</li><li><strong>沖繩尚學相關展示：</strong>若 10/25 想看展，查琉球新報／沖繩タイムス是否有新展出；2025 優勝旗展、寫真展已結束。</li><li><strong>全素無五辛：</strong>確認 10/24 飯店早餐、Gajimaru 午餐、Esparza's 晚餐，包括醬汁、湯底與莎莎醬。</li><li><strong>週一還車後：</strong>原稿排 18:15 計程車去機場；預先確認叫車與費用，不依賴 17:00 已結束的免費送機。</li><li><strong>商場取捨：</strong>定稿主線保留 PARCO＋Rycom；若長輩只逛一次，採週六替代方案。</li></ol>
       </section>
     </div>
   </main>
-  <footer><div class="wrap">2026 沖繩旅行手冊 · 更新：2026/10/10 · 完整旅遊資料與安排</div></footer>
+  <footer><div class="wrap">2026 沖繩旅行手冊 · 2026/10/10 定稿版 · 逐時行程與完整旅遊資料</div></footer>
 </body>
 </html>
